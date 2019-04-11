@@ -40,7 +40,7 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 const logo = document.getElementById('logo-img');
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
 // Middle Banner Img
@@ -74,7 +74,8 @@ const ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 const ctaHeading1 = document.querySelector('h1');
-ctaHeading1.textContent = siteContent["cta"]["h1"];
+ctaHeading1.innerHTML = 'DOM <br /> Is <br /> Awesome';
+// ctaHeading1.textContent = siteContent["cta"]["h1"];
 
 const ctaBtn = document.querySelector('button');
 ctaBtn.textContent = siteContent["cta"]["button"];
@@ -119,7 +120,8 @@ const contactHeading = document.querySelectorAll('h4')[5];
 contactHeading.textContent = siteContent["contact"]["contact-h4"];
 
 const contactAddress = document.querySelectorAll('p')[5];
-contactAddress.textContent = siteContent["contact"]["address"];
+contactAddress.innerHTML = "123 Way 456 Street <br /> Somewhere, USA";
+// contactAddress.textContent = siteContent["contact"]["address"];
 
 const contactPhone = document.querySelectorAll('p')[6];
 contactPhone.textContent = siteContent["contact"]["phone"];
@@ -141,8 +143,12 @@ const newNavSections = ['Blog',  'Careers'];
 newNavSections.forEach(newSection => {
   const elem = document.createElement('a');
   elem.textContent = newSection;
-  navBar.append(elem);
+  navBar.prepend(elem);
 });
+
+const links = document.createElement('a');
+links.textContent = 'Links';
+navBar.append(links);
 
 const anchors = document.querySelectorAll('a');
 anchors.forEach(anchor => anchor.style.color = 'green');
