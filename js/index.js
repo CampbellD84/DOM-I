@@ -37,6 +37,118 @@ const siteContent = {
   },
 };
 
+
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+const logo = document.getElementById('logo-img');
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+// Middle Banner Img
+const midBannerImg = document.getElementById('middle-img');
+midBannerImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+/* ================= NAVBAR =============== */
+
+const navLink1 = document.querySelectorAll('a')[0];
+navLink1.textContent = siteContent["nav"]["nav-item-1"];
+
+const navLink2 = document.querySelectorAll('a')[1];
+navLink2.textContent = siteContent["nav"]["nav-item-2"];
+
+const navLink3 = document.querySelectorAll('a')[2];
+navLink3.textContent = siteContent["nav"]["nav-item-3"];
+
+const navLink4 = document.querySelectorAll('a')[3];
+navLink4.textContent = siteContent["nav"]["nav-item-4"];
+
+const navLink5 = document.querySelectorAll('a')[4];
+navLink5.textContent = siteContent["nav"]["nav-item-5"];
+
+const navLink6 = document.querySelectorAll('a')[5];
+navLink6.textContent = siteContent["nav"]["nav-item-6"];
+
+/* ================== Call To Action ================= */
+
+// Call To Action Img
+const ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+const ctaHeading1 = document.querySelector('h1');
+ctaHeading1.innerHTML = 'DOM <br /> Is <br /> Awesome';
+// ctaHeading1.textContent = siteContent["cta"]["h1"];
+
+const ctaBtn = document.querySelector('button');
+ctaBtn.textContent = siteContent["cta"]["button"];
+
+
+/* ================ Main Content ================ */
+
+const mainFeatureHeading = document.querySelectorAll('h4')[0];
+mainFeatureHeading.textContent = siteContent["main-content"]["features-h4"];
+
+const mainFeatureContent = document.querySelectorAll('p')[0];
+mainFeatureContent.textContent = siteContent["main-content"]["features-content"];
+
+const mainAboutHeading = document.querySelectorAll('h4')[1];
+mainAboutHeading.textContent = siteContent["main-content"]["about-h4"];
+
+const mainAboutContent = document.querySelectorAll('p')[1];
+mainAboutContent.textContent = siteContent["main-content"]["about-content"];
+
+const mainServicesHeading = document.querySelectorAll('h4')[2];
+mainServicesHeading.textContent = siteContent["main-content"]["services-h4"];
+
+const mainServicesContent = document.querySelectorAll('p')[2];
+mainServicesContent.textContent = siteContent["main-content"]["services-content"];
+
+const mainProductHeading = document.querySelectorAll('h4')[3];
+mainProductHeading.textContent = siteContent["main-content"]["product-h4"];
+
+const mainProductContent = document.querySelectorAll('p')[3];
+mainProductContent.textContent = siteContent["main-content"]["product-content"];
+
+const mainVisionHeading = document.querySelectorAll('h4')[4];
+mainVisionHeading.textContent = siteContent["main-content"]["vision-h4"];
+
+const mainVisionContent = document.querySelectorAll('p')[4];
+mainVisionContent.textContent = siteContent["main-content"]["vision-content"];
+
+
+/* ================ Contact =================== */
+
+const contactHeading = document.querySelectorAll('h4')[5];
+contactHeading.textContent = siteContent["contact"]["contact-h4"];
+
+const contactAddress = document.querySelectorAll('p')[5];
+contactAddress.innerHTML = "123 Way 456 Street <br /> Somewhere, USA";
+// contactAddress.textContent = siteContent["contact"]["address"];
+
+const contactPhone = document.querySelectorAll('p')[6];
+contactPhone.textContent = siteContent["contact"]["phone"];
+
+const contactEmail = document.querySelectorAll('p')[7];
+contactEmail.textContent = siteContent["contact"]["email"];
+
+/* =============== Footer ================= */
+
+const footerCopyright = document.querySelectorAll('p')[8];
+footerCopyright.textContent = siteContent["footer"]["copyright"];
+
+/* ============== Add New Content ================= */
+
+const navBar = document.querySelector('nav');
+
+const newNavSections = ['Blog',  'Careers'];
+
+newNavSections.forEach(newSection => {
+  const elem = document.createElement('a');
+  elem.textContent = newSection;
+  navBar.prepend(elem);
+});
+
+const links = document.createElement('a');
+links.textContent = 'Links';
+navBar.append(links);
+
+const anchors = document.querySelectorAll('a');
+anchors.forEach(anchor => anchor.style.color = 'green');
